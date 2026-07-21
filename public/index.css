@@ -1,42 +1,73 @@
-*{
-    margin: 0px;
-    padding: 0px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.container{
-    margin-left: 250px;
-    padding-top: 20px;
+
+body {
+    width: 100%;
+    overflow-x: hidden;
 }
-ul{
+
+/* Navbar */
+.container {
+    width: 100%;
+    padding: 20px 60px;
+}
+
+.navbar {
+    width: 100%;
+}
+
+ul {
     display: flex;
-    justify-content: space-between;
-
+    justify-content: flex-end;
+    align-items: center;
+    gap: 40px;
 }
 
-.option{
+ul li {
+    list-style: none;
+}
+
+.option {
     color: black;
-
 }
 
-#contectus{
+#contectus {
     color: blue;
-    border: 2px solid;
+    border: 2px solid blue;
     border-radius: 15px;
-    padding: 5px;
-}
-a{
-   text-decoration: none;
+    padding: 5px 10px;
 }
 
+a {
+    text-decoration: none;
+}
+
+/* Hero Section */
 .box2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding: 40px 60px;
 }
 
 .slogen {
     width: 50%;
+    padding-right: 40px;
+}
+
+.slogen h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.slogen h3 {
+    font-weight: normal;
+    margin-bottom: 20px;
 }
 
 .img {
@@ -46,31 +77,106 @@ a{
 .img img {
     width: 100%;
     height: auto;
+    display: block;
 }
 
-.button{
+/* Buttons */
+.button {
     display: flex;
+    align-items: center;
+    margin-top: -80px;
     margin-bottom: 30px;
 }
 
-#getStart{
-    padding: 10px;
+#getStart {
+    padding: 10px 20px;
     background-color: blue;
     color: white;
+    border: none;
     border-radius: 20px;
     margin-right: 20px;
-}
-#learnmore{
-    margin-top: 8px;
+    cursor: pointer;
 }
 
-.servicecard{
+#learnmore {
+    margin-top: 8px;
+    color: black;
+}
+
+/* Service Card */
+.servicecard {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     background-color: gray;
     padding: 40px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     width: 80%;
-    margin-left: 40px;
+    margin: 0 auto;
+}
+
+.servicecard hr {
+    height: 30px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .container {
+        padding: 20px 30px;
+    }
+
+    ul {
+        gap: 20px;
+    }
+
+    .box2 {
+        padding: 30px;
+    }
+
+    .slogen h1 {
+        font-size: 36px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .box2 {
+        padding: 25px 20px;
+    }
+
+    .slogen {
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .slogen h1 {
+        font-size: 32px;
+    }
+
+    .img {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .button {
+        margin-top: 20px;
+    }
+
+    .servicecard {
+        width: 90%;
+        padding: 25px 10px;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 }
