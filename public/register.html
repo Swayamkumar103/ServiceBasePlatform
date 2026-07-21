@@ -13,6 +13,21 @@
 <body>
 
     <div class="register-container">
+        <div class="register-visual">
+        <div class="brand">
+            <i class="ti ti-tools"></i>
+            ServiceBase
+        </div>
+        <div class="visual-text">
+            <h2>Book trusted home services in minutes</h2>
+            <p>Join thousands of customers who find verified electricians, plumbers, cleaners and more — all in one place.</p>
+        </div>
+        <ul class="perks">
+            <li>Verified professionals</li>
+            <li>Easy scheduling &amp; booking</li>
+            <li>Secure payments</li>
+        </ul>
+    </div>
 
         <div class="register-box">
 
@@ -22,7 +37,7 @@
                 Join ServiceBase and book trusted professionals
             </p>
 
-            <form action="/register" method="POST">
+            <form id="registerForm">
 
                 <!-- Full Name -->
                 <div class="input-group">
@@ -30,6 +45,7 @@
 
                     <input
                         type="text"
+                        id="name"
                         name="name"
                         placeholder="Enter your full name"
                         required
@@ -43,6 +59,7 @@
 
                     <input
                         type="email"
+                        id="email"
                         name="email"
                         placeholder="Enter your email"
                         required
@@ -56,6 +73,7 @@
 
                     <input
                         type="tel"
+                        id="phone"
                         name="phone"
                         placeholder="Enter your phone number"
                         required
@@ -69,6 +87,7 @@
 
                     <input
                         type="password"
+                        id="password"
                         name="password"
                         placeholder="Create a password"
                         required
@@ -81,6 +100,7 @@
                     <label>Confirm Password</label>
 
                     <input
+                        id="confirmPassword"
                         type="password"
                         name="confirmPassword"
                         placeholder="Confirm your password"
@@ -90,6 +110,7 @@
 
 
                 <!-- Register Button -->
+                 
                 <button type="submit" class="register-btn">
                     Create Account
                 </button>
@@ -105,6 +126,7 @@
         </div>
 
     </div>
+    <script src="register.js"></script>
 
 </body>
 

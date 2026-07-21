@@ -1,0 +1,247 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+}
+
+/* ===== Split layout ===== */
+.register-container {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* ===== Left: brand / concept panel ===== */
+.register-visual {
+    flex: 1 1 420px;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3rem 2.5rem;
+
+    color: #ffffff;
+    background:
+        /* bubbles */
+        radial-gradient(circle at 88% 12%, rgba(255,255,255,0.10) 0 60px, transparent 61px),
+        radial-gradient(circle at 15% 22%, rgba(255,255,255,0.10) 0 24px, transparent 25px),
+        radial-gradient(circle at 82% 42%, rgba(159,225,203,0.45) 0 14px, transparent 15px),
+        radial-gradient(circle at 10% 52%, rgba(255,255,255,0.06) 0 40px, transparent 41px),
+        radial-gradient(circle at 50% 8%, rgba(255,255,255,0.22) 0 10px, transparent 11px),
+        radial-gradient(circle at 92% 78%, rgba(127,119,221,0.30) 0 70px, transparent 71px),
+        radial-gradient(circle at 22% 84%, rgba(29,158,117,0.30) 0 90px, transparent 91px),
+        radial-gradient(circle at 38% 66%, rgba(255,255,255,0.20) 0 8px, transparent 9px),
+        radial-gradient(circle at 66% 92%, rgba(159,225,203,0.40) 0 18px, transparent 19px),
+        radial-gradient(circle at 82% 94%, rgba(255,255,255,0.28) 0 6px, transparent 7px),
+        radial-gradient(circle at 5% 8%, rgba(255,255,255,0.30) 0 6px, transparent 7px),
+        radial-gradient(circle at 70% 30%, rgba(255,255,255,0.08) 0 20px, transparent 21px),
+        /* base gradient */
+        linear-gradient(160deg, #3c3489 0%, #26215c 100%);
+}
+
+/* soft glowing blobs, matches login page background */
+.register-visual::before,
+.register-visual::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(10px);
+    z-index: 0;
+}
+
+.register-visual::before {
+    width: 320px;
+    height: 320px;
+    top: -100px;
+    right: -80px;
+    background: radial-gradient(circle, rgba(127, 119, 221, 0.35) 0%, rgba(127, 119, 221, 0) 70%);
+}
+
+.register-visual::after {
+    width: 360px;
+    height: 360px;
+    bottom: -120px;
+    left: -100px;
+    background: radial-gradient(circle, rgba(29, 158, 117, 0.28) 0%, rgba(29, 158, 117, 0) 70%);
+}
+
+.register-visual .brand {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.register-visual .visual-text {
+    position: relative;
+    z-index: 1;
+}
+
+.register-visual .visual-text h2 {
+    font-size: 1.9rem;
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+}
+
+.register-visual .visual-text p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 340px;
+}
+
+.register-visual .perks {
+    position: relative;
+    z-index: 1;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.register-visual .perks li {
+    font-size: 0.85rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.register-visual .perks li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #9fe1cb;
+    font-weight: 700;
+}
+
+/* ===== Right: white form panel ===== */
+.register-box {
+    flex: 1 1 420px;
+    background:
+        radial-gradient(circle at 8% 10%, rgba(127,119,221,0.07) 0 55px, transparent 56px),
+        radial-gradient(circle at 92% 15%, rgba(127,119,221,0.12) 0 12px, transparent 13px),
+        radial-gradient(circle at 94% 88%, rgba(29,158,117,0.08) 0 60px, transparent 61px),
+        radial-gradient(circle at 6% 90%, rgba(29,158,117,0.15) 0 10px, transparent 11px),
+        radial-gradient(circle at 88% 55%, rgba(127,119,221,0.15) 0 6px, transparent 7px),
+        #ffffff;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 3rem 2.5rem;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.register-box h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 0.35rem;
+}
+
+.subtitle {
+    font-size: 0.85rem;
+    color: #6b6b6b;
+    margin-bottom: 1.75rem;
+}
+
+/* ===== Form fields ===== */
+.input-group {
+    margin-bottom: 1.1rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #4a4a4a;
+    margin-bottom: 0.4rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+    color: #1a1a1a;
+
+    background: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input::placeholder {
+    color: #a8a8a8;
+}
+
+.input-group input:focus {
+    border-color: #7f77dd;
+    box-shadow: 0 0 0 3px rgba(127, 119, 221, 0.15);
+}
+
+/* ===== Submit button ===== */
+.register-btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+
+    background: #3c3489;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.register-btn:hover {
+    background: #2c2568;
+}
+
+.register-btn:active {
+    transform: scale(0.98);
+}
+
+/* ===== Login link ===== */
+.login-link {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #6b6b6b;
+    margin-top: 1.5rem;
+}
+
+.login-link a {
+    color: #534ab7;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Responsive: stack on smaller screens ===== */
+@media (max-width: 900px) {
+    .register-visual {
+        display: none;
+    }
+
+    .register-box {
+        margin: 0 auto;
+        padding: 2.5rem 1.5rem;
+    }
+}

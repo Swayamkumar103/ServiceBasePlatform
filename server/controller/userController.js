@@ -11,8 +11,8 @@ const generateToken = (userId)=>{
 
 export const registerUser = async(req,res)=>{
     try{
-        const {name,email,password} = req.body;
-        if(!name|| !email || !password){
+        const {name,email,password,phone,phoneNumber} = req.body;
+        if(!name|| !email || !password || (!phoneNumber && !phone)){
             return res.status(400).json({message: 'Please provide all required fields' });
         }
         const existingUser = await User.findOne({email});
@@ -20,7 +20,7 @@ export const registerUser = async(req,res)=>{
             return res.status(400).json({message: "User already exist"})
         }
         // Create new user (password gets hashed automatically via model middleware)
-        const user = await User.create({ name, email, password });
+        const user = await User.create({ name, email, password, phoneNumber: phoneNumber || phone });
 
         // Generate token for the new user
         const token = generateToken(user._id);

@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    min-height: 100vh;
+}
+
+/* ===== Background layer ===== */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+    position: relative;
+    overflow: hidden;
+
+    background: linear-gradient(135deg, #eeedfe 0%, #e1f5ee 100%);
+}
+
+/* soft glowing color blobs behind the card */
+.login-container::before,
+.login-container::after {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    filter: blur(10px);
+    z-index: 0;
+}
+
+.login-container::before {
+    top: -120px;
+    right: -100px;
+    background: radial-gradient(circle, rgba(127, 119, 221, 0.35) 0%, rgba(127, 119, 221, 0) 70%);
+}
+
+.login-container::after {
+    bottom: -140px;
+    left: -120px;
+    background: radial-gradient(circle, rgba(29, 158, 117, 0.28) 0%, rgba(29, 158, 117, 0) 70%);
+}
+
+/* ===== Glass card ===== */
+.login-box {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 380px;
+
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(60, 52, 137, 0.15);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    box-shadow: 0 8px 32px rgba(60, 52, 137, 0.12);
+}
+
+.login-box h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #26215c;
+    text-align: center;
+    margin-bottom: 0.35rem;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #6b6789;
+    margin-bottom: 1.75rem;
+}
+
+/* ===== Form fields ===== */
+.input-group {
+    margin-bottom: 1.1rem;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #3c3489;
+    margin-bottom: 0.4rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.9rem;
+    color: #26215c;
+
+    background: #ffffff;
+    border: 1px solid rgba(60, 52, 137, 0.2);
+    border-radius: 8px;
+
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-group input::placeholder {
+    color: #a6a3c4;
+}
+
+.input-group input:focus {
+    border-color: #7f77dd;
+    box-shadow: 0 0 0 3px rgba(127, 119, 221, 0.15);
+}
+
+/* ===== Forgot password link ===== */
+.forgot {
+    text-align: right;
+    margin-bottom: 1.5rem;
+}
+
+.forgot a {
+    font-size: 0.8rem;
+    color: #534ab7;
+    text-decoration: none;
+}
+
+.forgot a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Submit button ===== */
+.login-btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+
+    background: #3c3489;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.login-btn:hover {
+    background: #2c2568;
+}
+
+.login-btn:active {
+    transform: scale(0.98);
+}
+
+/* ===== Register link ===== */
+.register {
+    text-align: center;
+    font-size: 0.85rem;
+    color: #6b6789;
+    margin-top: 1.5rem;
+}
+
+.register a {
+    color: #534ab7;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 420px) {
+    .login-box {
+        padding: 2rem 1.5rem;
+    }
+}
