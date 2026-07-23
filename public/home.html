@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- navbar  -->
         <div class="navbar">
             <ul>
                 <li id="logo">ServiceHub</li>
@@ -16,7 +17,7 @@
                 <li>Services</li>
                 <li>My booking</li>
                 <li>Become a provider</li>
-                <li id="user-profile"></li>
+                <li id="user-profile">SK</li>
             </ul>
             <button class="logout-btn">
                 <svg xmlns="http://w3.org" width="24" height="24" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -25,6 +26,8 @@
                 </svg>
             </button>
         </div>
+        <!-- Hero section  -->
+
         <div class="hero-section">
             <h1 id="msg1">Find trusted services near you</h1>
             <p id="msg2">Verified professionals, booked in minutes.</p>
@@ -32,6 +35,8 @@
             <input id="location" type="text" for="location" placeholder="📍Location">
             <button id="src-btn" >Search</button>
         </div>
+
+        <!--Category card Where we Book service-->
         <div class="category-card">
             <ul>
                 <li>
@@ -91,23 +96,56 @@
                 </li>
             </ul>
         </div><br>
-        <div class="service-option">
-            <h2>Popular services</h2><br>
-            <div class="service-card">
-                <img src="" alt="woring-image">
-                <p>Home ac service</p>
-                <i class="fa-regular fa-star"></i>
-                <span>4.8</span><br>
-                <button class="book-btn">Book</button>
+
+
+        <!--Book service card use event delegation -->
+
+
+        <section class="service-option">
+
+            <h2>Popular services</h2>
+                
+            <div class="ser-opt">
+            
+                <div class="service-card">
+                    <img src="worker.webp" alt="working-image">
+                
+                    <div class="service-details">
+                        <p class="service-name">Home AC service</p>
+                        <p class="worker-name">by Rahul Verma</p>
+                    
+                        <div class="rating">
+                            <i class="fa-regular fa-star"></i>
+                            <span>4.8 · from ₹499</span>
+                        </div>
+                    
+                        <button class="book-btn">Book now</button>
+                    </div>
+                </div>
+            
+            
+                <div class="service-card">
+                    <img src="worker.webp" alt="Pipe leak fix-image">
+                
+                    <div class="service-details">
+                        <p class="service-name">Pipe leak fix</p>
+                        <p class="worker-name">by Sunil Kumar</p>
+                    
+                        <div class="rating">
+                            <i class="fa-regular fa-star"></i>
+                            <span>4.7 · from ₹299</span>
+                        </div>
+                    
+                        <button class="book-btn">Book now</button>
+                    </div>
+                </div>
+            
             </div>
-            <div class="service-card">
-                <img src="" alt="Pipe leak fix-image">
-                <p>Pipe leak fix</p>
-                <i class="fa-regular fa-star"></i>
-                <span>4.7</span><br>
-                <button class="book-btn">Book</button>
-            </div>
-        </div><br>
+
+        </section>
+
+        <!-- How to book service  -->
+
         <section class="how-it-works">
 
             <h2>How it works</h2>
@@ -137,6 +175,67 @@
             </div>
 
         </section>
+        <!-- Why Choose Us Section -->
+        <section class="why-choose-us">
+        
+            <h2>Why choose us</h2>
+        
+            <div class="features">
+            
+                <div class="feature">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <p>Verified professionals</p>
+                </div>
+            
+                <div class="feature">
+                    <i class="fa-solid fa-tag"></i>
+                    <p>Transparent pricing</p>
+                </div>
+            
+                <div class="feature">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    <p>Easy booking</p>
+                </div>
+            
+                <div class="feature">
+                    <i class="fa-solid fa-lock"></i>
+                    <p>Secure payments</p>
+                </div>
+            
+                <div class="feature">
+                    <i class="fa-solid fa-headset"></i>
+                    <p>Customer support</p>
+                </div>
+            
+            </div>
+        
+        </section>
+
+
+        <!-- Footer -->
+        <footer>
+        
+            <div class="footer-links">
+            
+                <a href="#">About us</a>
+                <a href="#">Contact us</a>
+                <a href="#">Terms and conditions</a>
+                <a href="#">Privacy policy</a>
+            
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            
+            </div>
+        
+            <p class="copyright">
+                © 2026 ServiceHub. All rights reserved.
+            </p>
+        
+        </footer>
     </div>
+    <script src="home.js"></script>
 </body>
 </html>
