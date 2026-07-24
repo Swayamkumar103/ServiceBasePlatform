@@ -33,6 +33,7 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
             // Store JWT token and user info in localStorage (auto-login)
             localStorage.setItem('token', data.token);
             localStorage.setItem('user', JSON.stringify(data.user));
+            document.cookie = `token=${data.token}; path=/; max-age=604800; SameSite=Lax`;
             
             alert('Account created successfully! Redirecting to dashboard...');
             // Redirect to dashboard/home page

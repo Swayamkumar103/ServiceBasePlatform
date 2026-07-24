@@ -3,6 +3,7 @@ import cors from 'cors';
 import path from 'path';
 import connectdb from './server/config/db.js'
 import userRoutes from './server/routes/userRoutes.js'
+import protect from './server/middleware/authMiddleware.js';
 
 import { fileURLToPath } from 'url';
 const app = express();
@@ -11,6 +12,13 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+
+app.use((req, res, next) => {
+  if (req.path === '/home.html' || req.path === '/home' || req.path === '/dashboard') {
+    return protect(req, res, next);
+  }
+  next();
+});
 
 app.use(express.static("public"));
 app.use(express.json());
@@ -24,11 +32,11 @@ app.get("/",(req,res)=>{
   res.sendFile(path.join(__dirname, 'public/index.html'));
 })
 
-app.get('/home', (req, res) => {
+app.get('/home', protect, (req, res) => {
     res.sendFile(path.join(__dirname, 'public/home.html'));
 })
 
-app.get('/dashboard', (req, res) => {
+app.get('/dashboard', protect, (req, res) => {
     res.sendFile(path.join(__dirname, 'public/home.html'));
 })
 

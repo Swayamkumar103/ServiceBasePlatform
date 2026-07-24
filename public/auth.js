@@ -50,6 +50,7 @@ async function handleLogin(e) {
     // Save JWT token and user info to localStorage for future requests
     localStorage.setItem('token', data.token);
     localStorage.setItem('user', JSON.stringify(data.user));
+    document.cookie = `token=${data.token}; path=/; max-age=604800; SameSite=Lax`;
 
     showAlert('successMsg', 'Login successful! Redirecting...', 'success');
 
