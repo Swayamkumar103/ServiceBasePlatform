@@ -13,12 +13,23 @@ const __dirname = path.dirname(__filename);
 
 
 app.use(express.static("public"));
-app.use(express.json());             // Parse JSON request bodies
-app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+// User for route
 app.use('/api/users', userRoutes);
+
 connectdb();
+
 app.get("/",(req,res)=>{
   res.sendFile(path.join(__dirname, 'public/index.html'));
+})
+
+app.get('/home', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/home.html'));
+})
+
+app.get('/dashboard', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public/home.html'));
 })
 
 app.get('/login',(req,res)=>{

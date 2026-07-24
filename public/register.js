@@ -30,9 +30,13 @@ document.getElementById('registerForm').addEventListener('submit', async (e) => 
         const data = await response.json();
 
         if (response.ok) {
-            alert('Account created successfully! Redirecting to login...');
-            // Redirect to login page
-            window.location.href = '/login';
+            // Store JWT token and user info in localStorage (auto-login)
+            localStorage.setItem('token', data.token);
+            localStorage.setItem('user', JSON.stringify(data.user));
+            
+            alert('Account created successfully! Redirecting to dashboard...');
+            // Redirect to dashboard/home page
+            window.location.href = '/home';
         } else {
             alert(data.message || 'Registration failed');
         }

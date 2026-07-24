@@ -18,11 +18,15 @@
             <h1>Welcome Back!</h1>
             <p class="subtitle">Login to continue to ServiceBase</p>
 
-            <form action="/login" method="POST">
+            <div id="alertMsg" class="alert"></div>
+            <div id="successMsg" class="alert"></div>
+
+            <form id="loginForm" novalidate>
                 <div class="input-group">
                     <label>Email</label>
                     <input
                         type="email"
+                        id="email"
                         name="email"
                         placeholder="Enter your email"
                         required
@@ -33,6 +37,7 @@
                     <label>Password</label>
                     <input
                         type="password"
+                        id="password"
                         name="password"
                         placeholder="Enter your password"
                         required
@@ -43,7 +48,7 @@
                     <a href="#">Forgot Password?</a>
                 </div>
 
-                <button type="submit" class="login-btn">
+                <button type="submit" id="loginBtn" class="login-btn">
                     Login
                 </button>
                 
@@ -59,5 +64,6 @@
 
     </div>
 
+    <script src="auth.js"></script>
 </body>
-</html>>
+</html>
