@@ -66,3 +66,72 @@ document.addEventListener('DOMContentLoaded', () => {
     displayUserProfile();
     handleLogout();
 });
+
+
+// ---------Get user location --------------
+const locationBtn = document.getElementById("location-btn");
+const locationInput = document.getElementById("location");
+
+locationBtn.addEventListener("click", () => {
+
+    if (!navigator.geolocation) {
+        alert("Geolocation is not supported by your browser.");
+        return;
+    }
+
+    navigator.geolocation.getCurrentPosition(
+        async (position) => {
+
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+
+            console.log(lat, lon);
+
+            // Convert coordinates to address using OpenStreetMap
+            const response = await fetch(
+                `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
+            );
+
+            const data = await response.json();
+
+            const address = data.display_name || '';
+            locationInput.value = address;
+
+            // Send coordinates + address to server (protected route)
+            try {
+                const token = getStoredToken();
+                const res = await fetch('/api/users/location', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        ...(token ? { 'Authorization': 'Bearer ' + token } : {})
+                    },
+                    body: JSON.stringify({ latitude: lat, longitude: lon, address })
+                });
+
+                const result = await res.json();
+                if (res.ok) {
+                    // Update stored user object with location if present
+                    const userStr = localStorage.getItem('user');
+                    if (userStr) {
+                        try {
+                            const user = JSON.parse(userStr);
+                            user.location = { latitude: lat, longitude: lon, address };
+                            localStorage.setItem('user', JSON.stringify(user));
+                        } catch (e) { /* ignore parse errors */ }
+                    }
+                    alert('Location saved successfully');
+                } else {
+                    console.warn('Failed to save location:', result.message || result);
+                }
+            } catch (err) {
+                console.error('Error saving location:', err);
+            }
+
+        },
+        () => {
+            alert("Unable to get your location.");
+        }
+    );
+
+});

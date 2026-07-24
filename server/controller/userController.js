@@ -73,6 +73,34 @@ export const loginUser = async(req,res)=>{
     }
 };
 
+// --- Get user location ---
+
+export const updateUserLocation = async (req, res) => {
+    try {
+
+        const { latitude, longitude, address } = req.body;
+
+        await User.findByIdAndUpdate(req.user._id, {
+            location: {
+                latitude,
+                longitude,
+                address: address || ''
+            }
+        });
+
+        res.status(200).json({
+            success: true,
+            message: "Location updated successfully"
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            message: error.message
+        });
+    }
+};
+
 // --- GET current logged-in user profile ---
 // GET /api/users/profile
 export const getUserProfile = async (req, res) => {

@@ -28,6 +28,22 @@ const userSchema = new mongoose.Schema({
       required:[true,'Phone Number is rquired'],
       maxlenght :[10,'Phone Number must be 10 digit']
     },
+
+    location: {
+        latitude: {
+            type: Number,
+            default: null
+        },
+        longitude: {
+            type: Number,
+            default: null
+        },
+        address: {
+            type: String,
+            default: ""
+        }
+    },
+    
     createdAt: {
     type: Date,
     default: Date.now    // Automatically set when user registers
