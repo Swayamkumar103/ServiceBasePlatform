@@ -1,51 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-     <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>ServiceHub | Home services, booked in minutes</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/tabler-icons.min.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-    <div class="container">
-        <div id="logo"></div>
-        <div class="navbar">
-            <ul type="none">
-                <a href="/home"><li class="option">Home</li></a>
-                <a href="/aboutus"><li class="option">Aboutus</li></a>
-                <a href="/services"><li class="option">Services</li></a>
-                <a href="/pricing"><li class="option">pricing</li></a>
-                <li>Search 🔍</li>
-                <a href="/contectus"><li class="option" id="contectus">Contect Us</li></a>
-            </ul>
-            
+
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo"><i class="ti ti-tools"></i> ServiceHub</div>
+
+        <nav class="nav-links">
+            <!-- <a href="/home" class="active">Home</a> -->
+            <a href="/aboutus">About us</a>
+            <a href="/services">Services</a>
+            <a href="/pricing">Pricing</a>
+        </nav>
+
+        <div class="nav-actions">
+            <i class="ti ti-search"></i>
+            <a href="/login" class="login-link">Log in</a>
+            <a href="/contactus" class="btn-contact">Contact us</a>
         </div>
-    </div>
-    <div class="box2">
-        <div class="slogen">
-            <h1>Easy, reliable way to take care of your home 🏠</h1>
-            <h3>We provide you with the best people to help take care your home.</h3>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg-shapes" aria-hidden="true">
+            <span class="shape shape-1"></span>
+            <span class="shape shape-2"></span>
         </div>
-        <div class="img">
-            <img src="worker.webp" alt="Worker">
+
+        <div class="hero-inner">
+            <div class="hero-text">
+                <div class="badge"><i class="ti ti-star-filled"></i> Trusted by 10,000+ homeowners</div>
+
+                <h1>Easy, reliable way to take care of your home</h1>
+                <p>We connect you with verified electricians, plumbers, cleaners and more — booked in minutes, done right the first time.</p>
+
+                <div class="hero-actions">
+                    <a href="/login"><button id="getStart">Get started</button></a>
+                    <a href="/learnmore" class="learn-more">Learn more <i class="ti ti-arrow-right"></i></a>
+                </div>
+
+                <div class="stats">
+                    <div class="stat"><span class="stat-num">10K+</span><span class="stat-label">Happy customers</span></div>
+                    <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Verified pros</span></div>
+                    <div class="stat"><span class="stat-num">4.9★</span><span class="stat-label">Avg. rating</span></div>
+                </div>
+            </div>
+
+            <div class="hero-image">
+                <div class="image-card">
+                    <i class="ti ti-tool"></i>
+                </div>
+
+                <div class="float-card float-top">
+                    <i class="ti ti-shield-check"></i>
+                    <div><strong>Verified</strong><span>Background checked</span></div>
+                </div>
+
+                <div class="float-card float-bottom">
+                    <i class="ti ti-star-filled"></i>
+                    <div><strong>4.9 rating</strong><span>2,300+ reviews</span></div>
+                </div>
+            </div>
         </div>
-        <div class="button">
-        <a href="/login">
-            <button id="getStart">Get Started</button>
-        </a>
-        <a href="/learnmore"><p id="learnmore">Learn more ›</p></a>
+    </section>
+
+    <!-- Service strip -->
+    <div class="service-strip">
+        <span class="strip-title"><i class="ti ti-apps"></i> Popular services</span>
+        <span class="divider"></span>
+        <span><i class="ti ti-spray"></i> Home cleaning</span>
+        <span class="divider"></span>
+        <span><i class="ti ti-wrench"></i> Plumber</span>
+        <span class="divider"></span>
+        <span><i class="ti ti-bolt"></i> Electrical</span>
     </div>
 
-    </div>
-    
-    <div class="servicecard">
-        <p id="services">Services</p><hr>
-        <p id="homecleaning">Home Cleaning</p><hr>
-        <p id="plumber">Plumber</p><hr>
-        <p id="electrical">Electrical</p>
-    </div>
-    <footer class="contact">
-        
+    <!-- Why ServiceHub -->
+    <section class="why-us">
+        <div class="section-label">Why ServiceHub</div>
+        <h2>Everything you need, in one place</h2>
+        <p class="section-sub">One platform to find, compare and book verified home service professionals — no phone calls, no guesswork.</p>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="ti ti-shield-check"></i></div>
+                <h3>Verified pros</h3>
+                <p>Background-checked professionals</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="ti ti-tag"></i></div>
+                <h3>Fair pricing</h3>
+                <p>Upfront quotes, no surprises</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="ti ti-calendar-check"></i></div>
+                <h3>Fast booking</h3>
+                <p>Schedule in under 2 minutes</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="ti ti-headset"></i></div>
+                <h3>24/7 support</h3>
+                <p>We're here if anything goes wrong</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA band -->
+    <section class="cta-band">
+        <div>
+            <h2>Ready to get started?</h2>
+            <p>Book your first service today — it takes less than 2 minutes.</p>
+        </div>
+        <a href="/register"><button class="cta-btn">Get started free</button></a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="logo light"><i class="ti ti-tools"></i> ServiceHub</div>
+                <p>Trusted home services, booked in minutes.</p>
+            </div>
+
+            <div class="footer-links">
+                <a href="/aboutus">About us</a>
+                <a href="/contactus">Contact us</a>
+                <a href="/terms">Terms & conditions</a>
+                <a href="/privacy">Privacy policy</a>
+            </div>
+
+            <div class="footer-social">
+                <i class="ti ti-brand-facebook"></i>
+                <i class="ti ti-brand-instagram"></i>
+                <i class="ti ti-brand-twitter"></i>
+            </div>
+        </div>
+
+        <div class="footer-bottom">© 2026 ServiceHub. All rights reserved.</div>
     </footer>
+
 </body>
 </html>
